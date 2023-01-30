@@ -1,0 +1,16 @@
+/*
+Andre Marroquin
+Gabriel Paz 
+Andy Fuentes
+*/
+
+
+
+Funcion Factorial
+
+(defun Fac (i)
+  (if (<= i 1)
+      1
+      (* i (Fac (- i 1)))))
+(print (Fac 5))
+

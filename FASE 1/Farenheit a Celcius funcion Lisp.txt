@@ -1,0 +1,13 @@
+
+/*
+Andre Marroquin
+Gabriel Paz 
+Andy Fuentes
+*/
+
+
+Funcion Farenheit a Celsius
+
+(defun FaC (F)
+  (/ (- F 32) 1.8))
+(print (FaC 350))

@@ -1,0 +1,16 @@
+/*
+Andre Marroquin
+Gabriel Paz 
+Andy Fuentes
+*/
+
+Funcion Fibonacci
+
+(defun Fib (e)
+  (if (< e 2)
+      e
+      (+ (Fib (- e 1)) (Fib (- e 2)))))
+(print (Fib 8))
+
+
+
