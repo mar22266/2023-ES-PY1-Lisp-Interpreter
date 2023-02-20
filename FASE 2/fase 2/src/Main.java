@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * FASE 2 PROYECTO 1
  * ALGORITMOS Y ESTRUCTURA DE DATOS
