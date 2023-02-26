@@ -10,26 +10,37 @@ import java.util.ArrayList;
  */
 public class Stack<String> {
 
-    public List<String> elementos;
+   ArrayList<String> elementos = new ArrayList<String>();
 
     public Stack () {
         this.elementos = new ArrayList<>();
     }
 
     public String pop() {
-        return elementos.remove(0);
+        return elementos.remove(elementos.size()-1);
     }
 
     public void push(String item) {
         elementos.add(item);
     }
 
+    public int size() {
+        return elementos.size();
+    }
+
+
     public String peek() {
-        return elementos.get(0);
+        int dat = elementos.size();
+        return elementos.get(dat-1);
     }
 
     public boolean empty() {
-        return (elementos.size() == 0);
+        if (this.elementos.isEmpty()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 
