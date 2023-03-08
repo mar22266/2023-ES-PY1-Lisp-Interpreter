@@ -48,11 +48,17 @@ public class Main {
 
 
             case 2:
+                /**
+                 * Funciones Fib,Fac,Ftoc
+                 */
 
                 break;
 
 
             case 3:
+                /**
+                 * Salir
+                 */
                 System.out.println("Gracias por usar el programa");
                 break;
 
