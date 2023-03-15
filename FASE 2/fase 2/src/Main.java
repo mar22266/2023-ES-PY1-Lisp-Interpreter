@@ -51,10 +51,11 @@ public static void main(String[] args) {
                 /**
                  * Funciones Fib,Fac,Ftoc
                  */
-
+                System.out.println("Ingrese una expresión en el formato '(factorial n)': ");
+                String input = sc.nextLine();
+                Tokenizer tokenizer = new Tokenizer(input);
+                tokenizer.calculateFactorial();
                 break;
-
-
             case 3:
                 /**
                  * Salir
