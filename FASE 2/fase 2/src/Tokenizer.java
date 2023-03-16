@@ -53,6 +53,9 @@ public class Tokenizer {
         }
     }
 
+    /**
+     * Recorrer el arreglo de tokens y calcular el factorial de cada uno de ellos.
+     */
     public void calculateFactorial() {
         for (int i = 0; i < index; i++) {
             int token = tokens[i];
@@ -66,6 +69,11 @@ public class Tokenizer {
         }
     }
 
+    /**
+     *
+     * @param n el número del cual se desea calcular el factorial.
+     * @return el factorial de n.
+     */
     private int factorial(int n) {
         int result = 1;
         for (int i = 1; i <= n; i++) {
