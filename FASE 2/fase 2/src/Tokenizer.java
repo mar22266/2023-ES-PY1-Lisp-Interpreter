@@ -12,13 +12,24 @@ public class Tokenizer {
     private int index;
 
     public Tokenizer(String text) {
-        // Crear un StringTokenizer para dividir el texto en tokens
+       /**
+        * Crear un StringTokenizer para dividir el texto en tokens.
+        * Los delimitadores son los siguientes caracteres: espacio, coma, punto y coma,
+        * dos puntos, guión, signo de interrogación, signo de exclamación y paréntesis.
+        *
+       */
         StringTokenizer tokenizer = new StringTokenizer(text, " ,.;:-?!()");
 
-        // Crear un arreglo para almacenar los tokens que representan números
+        /**
+         * Crear un arreglo para almacenar los tokens que representan números.
+         * El tamaño del arreglo es el número de tokens que se encuentran en el texto.
+         */
         tokens = new int[tokenizer.countTokens()];
 
-        // Buscar los tokens que representan números y almacenarlos en el arreglo
+        /**
+         * Recorrer los tokens y almacenar en el arreglo los que representan números.
+         * Si el token es "factorial(n)", calcular el factorial de n y almacenar el resultado.
+         */
         while (tokenizer.hasMoreTokens()) {
             String token = tokenizer.nextToken();
             try {
