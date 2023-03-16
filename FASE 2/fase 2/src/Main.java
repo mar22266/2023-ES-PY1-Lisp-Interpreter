@@ -67,6 +67,11 @@ public static void main(String[] args) {
                             /**
                              * Funcion Fac
                              */
+                            /**
+                             * El usuario ingresa una expresion en el formato '(factorial n)'
+                             * donde n es el numero al que se le va a calcular el factorial
+                             * y se imprime el resultado
+                             */
                             System.out.println("Ingrese una expresión en el formato '(factorial n)': ");
                             String input2 = sc.nextLine();
                             Tokenizer tokenizer2 = new Tokenizer(input2);
