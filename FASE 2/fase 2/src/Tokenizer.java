@@ -55,8 +55,10 @@ public class Tokenizer {
 
     /**
      * Recorrer el arreglo de tokens y calcular el factorial de cada uno de ellos.
+     *
+     * @return
      */
-    public void calculateFactorial() {
+    public int calculateFactorial() {
         for (int i = 0; i < index; i++) {
             int token = tokens[i];
 
@@ -67,6 +69,7 @@ public class Tokenizer {
                 System.out.println("Factorial de " + token + ": " + factorial(token));
             }
         }
+        return 0;
     }
 
     /**
