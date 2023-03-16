@@ -16,6 +16,7 @@ public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("\n------Bienvenido al interprete de LISP------\n");
+        System.out.println("Para la calculadora arimetrica va a leer un archivo llamado arimetrica.txt que esta en el folder del proyecto (fase 2) que ya contiene 4 operaciones en lenguaje Lisp");
         String menu = "1. Calculadora arimetrica \n2. Funciones Fib,Fac,Ftoc \n3. Salir";
         System.out.println(menu);
         System.out.println("Ingrese una opcion: ");
