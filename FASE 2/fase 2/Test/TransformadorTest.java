@@ -8,7 +8,6 @@ class TransformadorTest {
 
     /**
      * Test de la clase Transformador
-     * @param args evaluate method
      */
     @org.junit.jupiter.api.Test
     void evaluate() {
@@ -18,7 +17,6 @@ class TransformadorTest {
 
     /**
      * Test de la clase Transformador
-     * @param args evaluateExpression method
      */
     @org.junit.jupiter.api.Test
     void evaluateExpression() {
@@ -28,7 +26,6 @@ class TransformadorTest {
 
     /**
      * Test de la clase Transformador
-     * @param args evaluateFactorial method
      */
     @Test
     void testCalculateFactorial() {
