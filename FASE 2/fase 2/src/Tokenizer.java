@@ -36,7 +36,10 @@ public class Tokenizer {
                 int num = Integer.parseInt(token);
                 tokens[index++] = num;
             } catch (NumberFormatException e) {
-                // Si el token es "factorial(n)", calcular el factorial de n
+                /**
+                 * Si el token no es un número, verificar si es "factorial(n)".
+                 * Si es así, calcular el factorial de n y almacenar el resultado.
+                 */
                 if (token.matches("factorial\\(\\d+\\)")) {
                     String[] parts = token.split("\\(");
                     int n = Integer.parseInt(parts[1].substring(0, parts[1].length() - 1));
@@ -54,7 +57,9 @@ public class Tokenizer {
         for (int i = 0; i < index; i++) {
             int token = tokens[i];
 
-            // Si el token es un número mayor o igual a cero
+            /**
+             * Si el token es un número, calcular su factorial y mostrarlo en pantalla.
+             */
             if (token >= 0) {
                 System.out.println("Factorial de " + token + ": " + factorial(token));
             }
