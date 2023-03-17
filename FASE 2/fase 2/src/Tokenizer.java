@@ -48,6 +48,11 @@ public class Tokenizer {
                         result *= i;
                     }
                     tokens[index++] = result;
+                }else if (token.matches("fahrenheit-to-celsius\\(\\d+\\)")) {
+                    String[] parts = token.split("\\(");
+                    int f = Integer.parseInt(parts[1].substring(0, parts[1].length() - 1));
+                    int c = (int) fahrenheitToCelsius(f);
+                    tokens[index++] = c;
                 }
             }
         }
@@ -84,5 +89,23 @@ public class Tokenizer {
         }
         return result;
     }
+
+
+    public void calculateCelsius() {
+        for (int i = 0; i < index; i++) {
+            int token = tokens[i];
+            if (token >= 0) {
+                int celsius = fahrenheitToCelsius(token);
+                System.out.println(token + " grados Fahrenheit equivalen a " + celsius + " grados Celsius.");
+            }
+        }
+    }
+    
+    private int fahrenheitToCelsius(int f) {
+        return (int) ((f - 32) * 5.0 / 9.0);
+    }
+    
+
+    
 }
 
