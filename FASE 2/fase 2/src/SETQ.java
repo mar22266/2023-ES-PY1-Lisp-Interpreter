@@ -1,11 +1,10 @@
 import java.util.HashMap;
-import java.util.Stack;
 
-public class setq {
+public class SETQ {
 
     HashMap<String, String> mapa;
 
-    public setq(){
+    public SETQ(){
         mapa = new HashMap<>();
     }
 

@@ -1,6 +1,6 @@
-public class Quote {
+public class QUOTE {
 
-    public Quote() {
+    public QUOTE() {
     }
 
     public String ReturnQuote(String quote) {
