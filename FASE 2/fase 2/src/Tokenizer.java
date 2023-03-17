@@ -7,7 +7,7 @@
  */
 import java.util.StringTokenizer;
 
-public class Tokenizer {
+public class Tokenizer extends Main {
     private int[] tokens;
     private int index;
 

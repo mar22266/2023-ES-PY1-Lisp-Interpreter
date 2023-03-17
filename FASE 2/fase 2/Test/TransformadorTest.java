@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TransformadorTest {
+class TransformadorTest extends Transformador {
 
     /**
      * Test de la clase Transformador

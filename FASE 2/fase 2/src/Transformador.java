@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Clase que transforma una expresion en notacion prefija a notacion infija.
  */
-public class Transformador {
+public class Transformador extends Main {
     private final String input;
     private int index;
     /**
