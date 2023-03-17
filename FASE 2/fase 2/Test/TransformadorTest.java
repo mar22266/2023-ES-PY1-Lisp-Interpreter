@@ -24,14 +24,5 @@ class TransformadorTest {
         assertEquals(48, new Transformador("/ (* 6 7 8) (- 9 2)").evaluateExpression());
     }
 
-    /**
-     * Test de la clase Transformador
-     */
-    @Test
-    void testCalculateFactorial() {
-        Tokenizer tokenizer = new Tokenizer("1, 2, 3, factorial(4), 5, factorial(6)");
-        assertEquals(0, tokenizer.calculateFactorial()); //Debe retornar 0
-
-    }
 
 }

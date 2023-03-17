@@ -89,6 +89,11 @@ public class Tokenizer {
         }
         return result;
     }
+    /**
+     * Recorrer el arreglo de tokens y calcular el fibonacci de cada uno de ellos.
+     *
+     * @return resultado
+     */
     public void calculateFibonacci() {
         for (int i = 0; i < index; i++) {
             int token = tokens[i];
@@ -99,6 +104,11 @@ public class Tokenizer {
         }
     }
 
+    /**
+     *
+     * @param n el número del cual se desea calcular el fibonacci.
+     * @return el fibonacci de n.
+     */
     public static int fibonacci(int n) {
         if (n == 0) {
             return 0;
@@ -110,6 +120,9 @@ public class Tokenizer {
     }
 
 
+    /**
+     * Calcula la temperatura en grados Celsius a partir de una temperatura en grados Fahrenheit.
+     */
     public void calculateCelsius() {
         for (int i = 0; i < index; i++) {
             int token = tokens[i];
@@ -119,8 +132,11 @@ public class Tokenizer {
             }
         }
     }
-    
-    private int fahrenheitToCelsius(int f) {
+
+    /**
+     * Convierte una temperatura en grados Fahrenheit a grados Celsius.
+     */
+    protected int fahrenheitToCelsius(int f) {
         return (int) ((f - 32) * 5.0 / 9.0);
     }
     

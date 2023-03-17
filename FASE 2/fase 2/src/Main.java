@@ -92,7 +92,7 @@ public static void main(String[] args) {
                              * Funcion Ftoc
                              */
 
-                            System.out.println("Ingrese una expresión en el formato '(fahreinheit)': ");
+                            System.out.println("Ingrese una expresión en el formato '(fahreinheit n)': ");
                             input2 = sc.nextLine();
                             tokenizer2 = new Tokenizer(input2);
                             tokenizer2.calculateCelsius();
