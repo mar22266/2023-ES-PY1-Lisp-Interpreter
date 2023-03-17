@@ -89,6 +89,25 @@ public class Tokenizer {
         }
         return result;
     }
+    public void calculateFibonacci() {
+        for (int i = 0; i < index; i++) {
+            int token = tokens[i];
+            if (token >= 0) {
+                int resultado = fibonacci(token);
+                System.out.println("El " + token + "-ésimo número de fibonacci es: " + resultado);
+            }
+        }
+    }
+
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
+    }
 
 
     public void calculateCelsius() {

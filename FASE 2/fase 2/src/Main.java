@@ -68,6 +68,10 @@ public static void main(String[] args) {
                             /**
                              * Funcion Fib
                              */
+                            System.out.println("Ingrese una expresión en el formato '(fibonacci n)': ");
+                            String input = sc.nextLine();
+                            Tokenizer tokenizer = new Tokenizer(input.substring(1, input.length() - 1));
+                            tokenizer.calculateFibonacci();
                             break;
                         case 2:
                             /**
