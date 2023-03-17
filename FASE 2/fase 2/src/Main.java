@@ -15,11 +15,13 @@ public class Main {
 public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n------Bienvenido al interprete de LISP------\n");
+        System.out.println("================================================");
+        System.out.println("\n    BIENVENIDO AL INTERPRETE DE LISP \n");
+        System.out.println("================================================\n");
         System.out.println("Para la calculadora arimetrica va a leer un archivo llamado arimetrica.txt que esta en el folder del proyecto (fase 2) que ya contiene 4 operaciones en lenguaje Lisp");
-        String menu = "1. Calculadora arimetrica \n2. Funciones Fib,Fac,Ftoc \n3. Salir";
+        String menu = "\n1. CALCULADORA ARITMETICA \n2. FUNCIONES EXTRAS \n3. SALIR";
         System.out.println(menu);
-        System.out.println("Ingrese una opcion: ");
+        System.out.println("Porfavor ingrese una opcion: ");
         int opcion = sc.nextInt();
         sc.nextLine();
         while(opcion != 3) {
@@ -53,9 +55,12 @@ public static void main(String[] args) {
                     /**
                      * Funciones Fib,Fac,Ftoc
                      */
-                    String menu2 = "1. Funcion Fib \n2. Funcion Fac \n3. Funcion Ftoc";
+                    System.out.println("\n================================================");
+                    System.out.println("\n          MENU DE FUNCIONES EXTRA \n");
+                    System.out.println("================================================\n");
+                    String menu2 = "1. FIBONACCI \n2. FACTORIAL \n3. GRADOS F A GRADOS C";
                     System.out.println(menu2);
-                    System.out.println("Ingrese una opcion: ");
+                    System.out.println("Porfavor ingrese una opcion: ");
                     int opcion2 = sc.nextInt();
                     sc.nextLine();
                     switch (opcion2) {
@@ -108,7 +113,7 @@ public static void main(String[] args) {
             }
 
             System.out.println(menu);
-            System.out.println("Ingrese una opcion: ");
+            System.out.println("Porfavor ngrese una opcion: ");
             opcion = sc.nextInt();
             sc.nextLine();
         }
