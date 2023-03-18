@@ -12,21 +12,21 @@ import java.util.List;
  * Clase que transforma una expresion en notacion prefija a notacion infija.
  */
 public class Operaciones {
-    private final String input;
+
     private int index;
     /**
      Constructor que recibe una expresión en notacion prefija.
-     @param input la expresión en notacion prefija a ser evaluada.
+     @param
      */
-    public Operaciones(String input) {
-        this.input = input;
+    public Operaciones() {
         this.index = 0;
     }
     /**
-     evalua una expresión mate en nota prefija y devuelve su resultado.
-     @return el resultado de la evaluacion de la expresion.
+     * Metodo que transforma una expresion en notacion prefija a notacion infija.
+     * @param input expresion en notacion prefija
+     * @return expresion en notacion infija
      */
-    double evaluate() {
+    double evaluate(String input) {
         List<Double> operands = new ArrayList<>();
         char operator = ' ';
         while (index < input.length()) {
@@ -37,7 +37,7 @@ public class Operaciones {
             }
             if (current == '(') {
                 index++;
-                operands.add(evaluate());
+                operands.add(evaluate(input));
             } else if (current == ')') {
                 index++;
                 break;
@@ -73,13 +73,14 @@ public class Operaciones {
         }
         return 0;
     }
-    /**
 
-     Metodo publico que permite evaluar una expresion en notacion prefija.
-     @return el resultado de la evaluación de la expresión.
+    /**
+     * Metodo que evalua una expresion en notacion prefija.
+     * @param input expresion en notacion prefija
+     * @return resultado de la expresion
      */
-    public double evaluateExpression() {
+    public double evaluateExpression(String input) {
         index = 0;
-        return evaluate();
+        return evaluate(input);
     }
 }
