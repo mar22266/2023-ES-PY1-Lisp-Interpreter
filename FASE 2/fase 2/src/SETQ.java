@@ -2,12 +2,23 @@ import java.util.HashMap;
 
 public class SETQ {
 
+    /**
+     * @param args HashMap que almacena las variables y sus valores
+     */
     HashMap<String, String> mapa;
 
+    /**
+     * Constructor de la clase SETQ
+     */
     public SETQ(){
         mapa = new HashMap<>();
     }
 
+    /**
+     * Metodo que agrega una variable y su valor al HashMap
+     * @param key variable
+     * @param value valor de la variable
+     */
     public void agregar(String key, String value){
         if (mapa.containsKey(key)){
             mapa.remove(key);
@@ -17,6 +28,11 @@ public class SETQ {
         }
     }
 
+    /**
+     * Metodo que busca una variable en el HashMap
+     * @param key variable a buscar
+     * @return true si la variable existe, false si no existe
+     */
     public boolean foundValue(String key){
         if (mapa.containsKey(key)){
             return true;
@@ -24,6 +40,12 @@ public class SETQ {
             return false;
         }
     }
+
+    /**
+     * Metodo que busca una variable en el HashMap
+     * @param key variable a buscar
+     * @return el valor de la variable
+     */
     public V_Stack<String> buscar(V_Stack<String> stack) {
         V_Stack<String> values = new V_Stack<String>();
         String key = "";
