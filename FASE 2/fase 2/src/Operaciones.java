@@ -11,14 +11,14 @@ import java.util.List;
 /**
  * Clase que transforma una expresion en notacion prefija a notacion infija.
  */
-public class Transformador extends Main {
+public class Operaciones {
     private final String input;
     private int index;
     /**
      Constructor que recibe una expresión en notacion prefija.
      @param input la expresión en notacion prefija a ser evaluada.
      */
-    public Transformador(String input) {
+    public Operaciones(String input) {
         this.input = input;
         this.index = 0;
     }
@@ -75,7 +75,7 @@ public class Transformador extends Main {
     }
     /**
 
-    Metodo publico que permite evaluar una expresion en notacion prefija.
+     Metodo publico que permite evaluar una expresion en notacion prefija.
      @return el resultado de la evaluación de la expresión.
      */
     public double evaluateExpression() {
@@ -83,4 +83,3 @@ public class Transformador extends Main {
         return evaluate();
     }
 }
-
