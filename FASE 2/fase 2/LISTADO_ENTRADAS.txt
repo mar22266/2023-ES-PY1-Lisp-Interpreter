@@ -1,0 +1,32 @@
+LISTADO ENTRADAS A PROBAR:
+
+OPERACIONES
+(* (- 20 4) 4)
+(* 16 4)
+(/ (+ 2 3) 5)
+
+SETQ
+(setq a 3)
+(+ a 2) - 5
+
+QUOTE
+(quote LISP) - LISP
+
+ATOMS
+(ATOM 3) - verdadero
+(ATOM A B C ) - falso
+
+CONDICIONALES
+(cond (> 3 2)) - verdadero
+(cond (< 3 2)) - falso
+(cond (= 3 3)) - verdadero
+
+LISTAS
+(list a b d) - (a b d)
+
+FUNCIONES
+(defun multi (k) (* k k))
+(multi 3) - 6
+(defun ftoc (fahrenheit) (* (- fahrenheit 32) 0.55))
+(ftoc 32) - 0
+(defun multi (k) (* k k))
