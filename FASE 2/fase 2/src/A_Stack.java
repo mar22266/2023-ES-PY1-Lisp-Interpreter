@@ -65,6 +65,19 @@ public class A_Stack<I> implements IStack<I>{
     }
 
     /**
+     * metodo que devuelve si el elemento esta en el ArrayList
+     * @param item
+     * @return
+     */
+    public boolean isInStack(String item){
+        for(int i = 0; i < elementosA.size(); i++){
+            if(elementosA.get(i).equals(item)){
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
      * metodo que devuelve el tamaño del ArrayList
      * @return
      */

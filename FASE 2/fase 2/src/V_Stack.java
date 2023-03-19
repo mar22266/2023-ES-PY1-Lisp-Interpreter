@@ -20,6 +20,10 @@ public class V_Stack<I> implements IStack<I> {
         elementos.add(item);
     }
 
+    /**
+     * metodo que agrega un elemento al Vector
+     * @param item elemento a agregar
+     */
     public boolean isInStack(String item){
         for(int i = 0; i < elementos.size(); i++){
             if(elementos.get(i).equals(item)){
