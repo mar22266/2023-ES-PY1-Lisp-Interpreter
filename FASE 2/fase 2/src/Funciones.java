@@ -29,7 +29,7 @@ public class Funciones {
     }
 
     
-    public String getCodigoCompleto() {
+    public String getCodigoCompleto () {
         return codigoCompleto;
     }
 

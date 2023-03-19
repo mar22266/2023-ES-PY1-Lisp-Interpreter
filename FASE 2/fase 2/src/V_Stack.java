@@ -20,6 +20,15 @@ public class V_Stack<I> implements IStack<I> {
         elementos.add(item);
     }
 
+    public boolean isInStack(String item){
+        for(int i = 0; i < elementos.size(); i++){
+            if(elementos.get(i).equals(item)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * metodo que elimina el ultimo elemento del Vector
      * @return

@@ -61,7 +61,7 @@ public class Predicados {
          */
         if(atom == true){
             String[] atomSplit = AfterBlank.split(" ");
-            if(atomSplit.length == 2){
+            if(atomSplit.length <= 2){
                 ask = "VERDADERO";
             }else{
                 ask = "FALSO";
@@ -132,23 +132,22 @@ public class Predicados {
          * se verifica que tipo de predicado es y se hace la operacion correspondiente
          * operacion list
          */
-        if (list == true) {
-            System.out.println("[");
+        if(list==true){
+            System.out.print("[");
 
-            for (int i = 0; i <=(AfterBlank.length()-1); i++) {
-                if(i < (AfterBlank.length()-1)){
-                    System.out.print(AfterBlank.charAt(i)+", ");
-                }
-                else{
-                    System.out.print(AfterBlank.charAt(i));
+            for (int i = 1; i <= (avoidBlank.length - 1); i++) {
+                if (i < (avoidBlank.length - 1)) {
+                    System.out.print(avoidBlank[i] + ", ");
+
+                } else {
+                    System.out.print(avoidBlank[i]);
                 }
             }
-            System.out.println("]");
+
+            System.out.print("]");
         }
 
-        return ask;
+
+    return ask;
     }
-
-
-
 }

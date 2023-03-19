@@ -1,86 +1,117 @@
-import java.util.ArrayList;
-import java.util.List;
-/**
- * FASE 2 PROYECTO 1
- * ALGORITMOS Y ESTRUCTURA DE DATOS
- * ANDRE MARROQUIN
- * ANDY FUENTES
- * GABRILE PAZ
- */
-
-/**
- * Clase que transforma una expresion en notacion prefija a notacion infija.
- */
 public class Operaciones {
 
-    private int index;
-    /**
-     Constructor que recibe una expresión en notacion prefija.
-     @param
-     */
-    public Operaciones() {
-        this.index = 0;
-    }
-    /**
-     * Metodo que transforma una expresion en notacion prefija a notacion infija.
-     * @param input expresion en notacion prefija
-     * @return expresion en notacion infija
-     */
-    double evaluate(String input) {
-        List<Double> operands = new ArrayList<>();
-        char operator = ' ';
-        while (index < input.length()) {
-            char current = input.charAt(index);
-            if (Character.isWhitespace(current)) {
-                index++;
-                continue;
+    public String Operando(String expresion) {
+        V_Stack<Double> stack = new V_Stack<Double>();
+        String resultado = "";
+        String pre = expresion.replace("(", "");
+        pre = pre.replace(")", "");
+        for(int i = pre.length() -1; i >= 0; i--) {
+            String aString = Character.toString(pre.charAt(i));
+            try
+            {
+
+                stack.push(Double.parseDouble(aString));
             }
-            if (current == '(') {
-                index++;
-                operands.add(evaluate(input));
-            } else if (current == ')') {
-                index++;
-                break;
-            } else if (Character.isDigit(current)) {
-                int start = index;
-                while (index < input.length() && (Character.isDigit(input.charAt(index)) || input.charAt(index) == '.')) {
-                    index++;
+            catch (Exception e)
+            {
+                double x = 0;
+                double y = 0;
+
+                try {
+                    x = stack.pop();
+                    y = stack.pop();
+                } catch (Exception exception) {
+                    return "ERROR";
                 }
-                operands.add(Double.parseDouble(input.substring(start, index)));
-            } else {
-                operator = current;
-                index++;
+
+                if(aString.equals("+")) {
+
+                    double suma = x + y;
+                    stack.push(suma);
+                } if(aString.equals("*")) {
+
+                double mul = x * y;
+                stack.push(mul);
+
+            } if(aString.equals("-")) {
+
+                double resta = x - y;
+                stack.push(resta);
+
+            } if(aString.equals("/")) {
+
+                double Div = x / y;
+                stack.push(Div);
+
+            }
+            else{
+                return "ERROR";
             }
 
-            if (operands.size() == 2) {
-                double a = operands.remove(0);
-                double b = operands.remove(0);
-                if (operator == '+') {
-                    operands.add(a + b);
-                } else if (operator == '-') {
-                    operands.add(a - b);
-                } else if (operator == '*') {
-                    operands.add(a * b);
-                } else if (operator == '/') {
-                    operands.add(a / b);
-                } else if (operator == '^') {
-                    operands.add(Math.pow(a, b));
-                }
             }
         }
-        if (operands.size() == 1) {
-            return operands.get(0);
-        }
-        return 0;
+
+        double peek = stack.peek();
+        resultado = Double.toString(peek);
+        return resultado;
     }
 
-    /**
-     * Metodo que evalua una expresion en notacion prefija.
-     * @param input expresion en notacion prefija
-     * @return resultado de la expresion
-     */
-    public double evaluateExpression(String input) {
-        index = 0;
-        return evaluate(input);
+    public String Calc(String expresion) {
+
+        V_Stack<Double> stack = new V_Stack<Double>();
+        String resp = "";
+
+
+        String pre = expresion.replace("(", "");
+        pre = pre.replace(")", "");
+
+
+        String[] lista = pre.split(" ");
+
+        for(int i = lista.length -1; i >= 0; i--) {
+
+            String aString = lista[i];
+
+            try
+            {
+                stack.push(Double.parseDouble(aString));
+            }
+            catch (Exception e)
+            {
+                double x = 0;
+                double y = 0;
+                try {
+                    x = stack.pop();
+                    y = stack.pop();
+                } catch (Exception exception) {
+                    return "ERROR";
+                }
+
+                if(aString.equals("+")) {
+
+                    double suma = x + y;
+                    stack.push(suma);
+                } if(aString.equals("*")) {
+
+                double mul = x * y;
+                stack.push(mul);
+
+            } if(aString.equals("-")) {
+
+                double resta = x - y;
+                stack.push(resta);
+
+            } if(aString.equals("/")) {
+
+                double Div = x / y;
+                stack.push(Div);
+            }
+            }
+        }
+
+        double peek = stack.peek();
+        resp = Double.toString(peek);
+        return resp;
     }
+
 }
