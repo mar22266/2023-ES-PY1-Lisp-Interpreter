@@ -1,4 +1,4 @@
-public class Operaciones {
+public class Operaciones extends Lisp {
 
     public String Operando(String expresion) {
         V_Stack<Double> stack = new V_Stack<Double>();

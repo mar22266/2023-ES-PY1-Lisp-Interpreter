@@ -1,5 +1,5 @@
 import java.util.Vector;
-public class V_Stack<I> implements IStack<I> {
+public class V_Stack<I> extends Lisp implements IStack<I> {
 
 
     private Vector<I> elementos;

@@ -1,4 +1,4 @@
-public class Predicados {
+public class Predicados extends Lisp {
 
     /**
      * metodo que devuelve si es un predicado atom
