@@ -26,7 +26,7 @@ LISTAS
 
 FUNCIONES
 (defun multi (k) (* k k))
-(multi 3) - 6
+(multi 3) - 9
 (defun ftoc (fahrenheit) (* (- fahrenheit 32) 0.55))
 (ftoc 32) - 0
 (defun multi (k) (* k k))
