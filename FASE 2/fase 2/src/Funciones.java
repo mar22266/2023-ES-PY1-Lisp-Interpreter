@@ -1,4 +1,4 @@
-public class Funciones extends Lisp {
+public class Funciones {
 
     private String nombre;
     private String parametro;

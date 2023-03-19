@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class A_Stack<I> extends Lisp implements IStack<I>{
+public class A_Stack<I> implements IStack<I>{
 
 
     public ArrayList<I> elementosA;

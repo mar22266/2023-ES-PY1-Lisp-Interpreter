@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class SETQ extends Lisp {
+public class SETQ {
 
     /**
      * @param args HashMap que almacena las variables y sus valores

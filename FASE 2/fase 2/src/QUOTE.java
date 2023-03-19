@@ -1,4 +1,4 @@
-public class QUOTE extends Lisp {
+public class QUOTE {
 
     public QUOTE() {
     }

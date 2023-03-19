@@ -1,5 +1,5 @@
 
-public class Lisp extends Main {
+public class Lisp {
 
     V_Stack<String> stack = new V_Stack<>();
     V_Stack<String> Rstack = new V_Stack<String>();
