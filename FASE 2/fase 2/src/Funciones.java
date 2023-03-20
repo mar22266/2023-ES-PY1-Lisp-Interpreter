@@ -1,15 +1,20 @@
 public class Funciones {
-
+    /**
+     * Atributos de la clase Funciones
+     */
     private String nombre;
     private String parametro;
     private String codigo;
     private String codigoCompleto;
+
+
     /**
-     * metodo que devuelve el nombre de la funcion
-     * @param request
-     * @return el nombre de la funcion
+     * Constructor de la clase funciones
+     * @param nombre
+     * @param parametro
+     * @param codigo
+     * @param codigoCompleto
      */
-   
     public Funciones(String nombre, String parametro, String codigo, String codigoCompleto){
         this.nombre = nombre;
         this.parametro = parametro;
@@ -18,7 +23,7 @@ public class Funciones {
     }
 
     /**  metodo que retorna el nombre de la funcion
-     * @param request
+     * @param
      * @return
      */
     
@@ -27,7 +32,7 @@ public class Funciones {
     }
 
     /**  metodo que retorna el nombre del parametro
-     * @param request
+     * @param
      * @return
      */
     public String getParametro() {
@@ -35,7 +40,7 @@ public class Funciones {
     }
 
     /**  metodo que retorna el nombre del codigo
-     * @param request
+     * @param
      * @return
      */
     public String getCodigo() {
@@ -43,7 +48,7 @@ public class Funciones {
     }
 
     /**  metodo que retorna el nombre del codigo completo
-     * @param request
+     * @param
      * @return
      */
     public String getCodigoCompleto () {
