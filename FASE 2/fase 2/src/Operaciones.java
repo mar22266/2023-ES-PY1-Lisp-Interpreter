@@ -1,5 +1,9 @@
 public class Operaciones {
-
+    /**
+     * metodo que devuelve el operando de la expresion
+     * @param expresion
+     * @return
+     */
     public String Operando(String expresion) {
         V_Stack<Double> stack = new V_Stack<Double>();
         String resultado = "";
@@ -55,7 +59,10 @@ public class Operaciones {
         resultado = Double.toString(peek);
         return resultado;
     }
-
+/** metodo que devuelve el resultado de la operacion
+ * @param expresion
+ * @return
+ */
     public String Calc(String expresion) {
 
         V_Stack<Double> stack = new V_Stack<Double>();

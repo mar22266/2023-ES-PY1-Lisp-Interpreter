@@ -7,9 +7,21 @@ import java.util.Scanner;
  * ANDY FUENTES
  * GABRILE PAZ
  */
+/**
+ * el menu principal del programa
+ * */
 public class Main {
 public static void main(String[] args) {
 
+/**
+ * se crea un objeto de la clase lisp y se llama al metodo translate para que se ejecute el programa
+ * se le pide al usuario que ingrese el codigo lisp
+ * se verifica que el codigo este bien escrito
+ * se llama al metodo translate para que se ejecute el codigo
+ * se le pide al usuario que ingrese exit para salir del programa
+ * @param args
+ * @return
+ * */
 
     Lisp lisp = new Lisp();
     Scanner sc = new Scanner(System.in);

@@ -1,6 +1,9 @@
 
 public class Lisp {
 
+/**
+ * se crean las pilas que se van a utilizar en el programa
+ * */
     V_Stack<String> stack = new V_Stack<>();
     V_Stack<String> Rstack = new V_Stack<String>();
     V_Stack<String> Cstack = new V_Stack<String>();
@@ -10,7 +13,10 @@ public class Lisp {
     Predicados predicados = new Predicados();
     A_Stack<Funciones> funciones = new A_Stack<>();
     
-
+/**
+ * se crea el metodo translate que es el que se encarga de ejecutar el codigo lisp
+ * @param request
+ * */
     public V_Stack<String> Cparameter(V_Stack<String> stack, String parametro, String valor) {
         V_Stack<String> valores = new V_Stack<String>();
         for(int i = 0; i< stack.size(); i++) {
@@ -23,6 +29,10 @@ public class Lisp {
         }
         return valores;
     }
+    /**
+     * se crea el metodo translate que es el que se encarga de ejecutar el codigo lisp
+     * @param request
+     * */
     public void VerifyCode(String linea){
         String newLine = linea.replace("(", "");
         newLine = newLine.replace(")", "");
@@ -31,7 +41,10 @@ public class Lisp {
             stack.push(splitting[i]);
         }
     }
-
+/**
+ * se crea el metodo translate que es el que se encarga de ejecutar el codigo lisp
+ * @param request
+ * */
     public boolean VerifyPa(String request){
         int contadora = 0;
         int contadorc = 0;
@@ -48,7 +61,10 @@ public class Lisp {
         }
         return false;
     }
-
+/**
+ * se crea el verifyfun que se encarga de verificar si la funcion existe
+ */
+    *
     public String VerifyFun(String name){
         for(int i = 0; i < funciones.size(); i++){
             if(name.equals(funciones.get(i).getNombre())){
@@ -57,7 +73,9 @@ public class Lisp {
         }
         return "null";
     }
-
+/**
+ * se crea Rfunc que se encarga de retornar el codigo de la funcion
+ * */
     public String RFunc(String name){
 
         for(int i = 0; i < funciones.size(); i++){
@@ -67,7 +85,9 @@ public class Lisp {
         }
         return "null";
     }
-
+/**
+ * se crea Rparameter que se encarga de retornar el parametro de la funcion
+ * */
     public String Rparameter(String name){
 
         for(int i = 0; i < funciones.size(); i++){
@@ -78,7 +98,10 @@ public class Lisp {
 
         return "null";
     }
-    
+
+    /**
+     * este es flagV que se encarga de verificar si la funcion es valida
+     * */
     public void FlagV(String linearequest){
         stack.clear();
         String asking = "";
@@ -109,7 +132,9 @@ public class Lisp {
         }
         VerifyCode(asking);
     }
-
+/**
+ * este es flagf se encarga de verificar si la funcion es invalida
+ * */
     public void FlagF(String linearequest){
         stack.clear();
         String asking = "";
@@ -137,7 +162,10 @@ public class Lisp {
         }
         VerifyCode(asking);
     }
-
+/**
+ * este es un booleano que se encarga de verificar si es un numero
+ * @param item
+ * */
     public boolean IsNum(String item) {
         try {
             int valor = Integer.parseInt(item);
@@ -147,6 +175,10 @@ public class Lisp {
         }
     }
 
+/**
+ * este es un translate que se encarga de ejecutar el codigo lisp
+ * @param request
+ * */
 
     public void Translate(String request){
         VerifyCode(request);
