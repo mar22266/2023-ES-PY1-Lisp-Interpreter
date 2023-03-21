@@ -1,6 +1,9 @@
 
 public class Lisp {
 
+/**
+ * se crean las pilas que se van a utilizar en el programa
+ * */
     V_Stack<String> stack = new V_Stack<>();
     V_Stack<String> Rstack = new V_Stack<String>();
     V_Stack<String> Cstack = new V_Stack<String>();
@@ -9,8 +12,14 @@ public class Lisp {
     QUOTE quote = new QUOTE();
     Predicados predicados = new Predicados();
     A_Stack<Funciones> funciones = new A_Stack<>();
-    
 
+    /**
+     * Cambiar el parametro de entrada a String
+     * @param stack
+     * @param parametro
+     * @param valor
+     * @return
+     */
     public V_Stack<String> Cparameter(V_Stack<String> stack, String parametro, String valor) {
         V_Stack<String> valores = new V_Stack<String>();
         for(int i = 0; i< stack.size(); i++) {
@@ -23,6 +32,11 @@ public class Lisp {
         }
         return valores;
     }
+
+    /**
+     * Verifica la sintaxis del codigo
+     * @param linea
+     */
     public void VerifyCode(String linea){
         String newLine = linea.replace("(", "");
         newLine = newLine.replace(")", "");
@@ -32,6 +46,11 @@ public class Lisp {
         }
     }
 
+    /**
+     * Verifica los parentesis de la entrada
+     * @param request
+     * @return
+     */
     public boolean VerifyPa(String request){
         int contadora = 0;
         int contadorc = 0;
@@ -49,6 +68,12 @@ public class Lisp {
         return false;
     }
 
+    /**
+     * Verifica si la funcion es valida
+     * @param name de la funcion
+     * @return
+     */
+
     public String VerifyFun(String name){
         for(int i = 0; i < funciones.size(); i++){
             if(name.equals(funciones.get(i).getNombre())){
@@ -58,6 +83,11 @@ public class Lisp {
         return "null";
     }
 
+    /**
+     * Regresa la funcion
+     * @param name
+     * @return
+     */
     public String RFunc(String name){
 
         for(int i = 0; i < funciones.size(); i++){
@@ -68,6 +98,11 @@ public class Lisp {
         return "null";
     }
 
+    /**
+     * Regresa el parametro de la funcion
+     * @param name
+     * @return
+     */
     public String Rparameter(String name){
 
         for(int i = 0; i < funciones.size(); i++){
@@ -78,7 +113,12 @@ public class Lisp {
 
         return "null";
     }
-    
+
+
+    /**
+     * el fag en caso de verdadero el request
+     * @param linearequest
+     */
     public void FlagV(String linearequest){
         stack.clear();
         String asking = "";
@@ -110,6 +150,10 @@ public class Lisp {
         VerifyCode(asking);
     }
 
+    /**
+     * el falg en caso es falso el request
+     * @param linearequest
+     */
     public void FlagF(String linearequest){
         stack.clear();
         String asking = "";
@@ -137,7 +181,10 @@ public class Lisp {
         }
         VerifyCode(asking);
     }
-
+/**
+ * este es un booleano que se encarga de verificar si es un numero
+ * @param item
+ * */
     public boolean IsNum(String item) {
         try {
             int valor = Integer.parseInt(item);
@@ -147,6 +194,10 @@ public class Lisp {
         }
     }
 
+/**
+ * este es un translate que se encarga de ejecutar el codigo lisp
+ * @param request
+ * */
 
     public void Translate(String request){
         VerifyCode(request);
@@ -169,6 +220,9 @@ public class Lisp {
                 stack = Cstack;
             }
 
+            /**
+             * si es recursivo y condicional es falso
+             */
             if(rec == true && condi == false){
                 String parametro = Rparameter(name);
                 String valor = String.valueOf(contadorA);
@@ -194,6 +248,9 @@ public class Lisp {
             }
             String code = stack.get(0);
 
+            /**
+             * Para operaciones arimetricas
+             */
             if(code.equals("-") || code.equals("+") || code.equals("*") || code.equals("/")){
 
                 stack = setq.buscar(stack);
@@ -236,6 +293,9 @@ public class Lisp {
                 }
             }
 
+            /**
+             * En caso de que la entrada sea setq
+             */
             else if(code.equalsIgnoreCase("Setq")){
 
                 if(stack.size() > 3){
@@ -247,6 +307,9 @@ public class Lisp {
                 flag = true;
             }
 
+            /**
+             * En caso de que la entrada sea un defun
+             */
             else if(code.equals("defun")){
 
                 String RFunc = request;
@@ -285,6 +348,9 @@ public class Lisp {
                 flag = true;
             }
 
+            /**
+             * en caso de que la entrada sea un quote
+             */
             else if(code.equalsIgnoreCase("Quote")){
 
                 String expresion = "";
@@ -301,7 +367,9 @@ public class Lisp {
                 quote.ReturnQuote(expresion);
                 flag = true;
             }
-
+            /**
+             * En caso de que la entrada sea un condicional
+             */
             else if(code.equalsIgnoreCase("cond")){
 
                 if(rec){
@@ -364,6 +432,9 @@ public class Lisp {
                 }
             }
 
+            /**
+             * en caso de que la entrada sea una lista
+             */
             else if(code.equalsIgnoreCase("list")){
 
                 String expresion = "";
@@ -377,6 +448,9 @@ public class Lisp {
                 flag = true;
             }
 
+            /**
+             * En caos de la entrada sea un atomo
+             */
             else if(code.equalsIgnoreCase("atom")){
 
                 String expresion = "";
@@ -400,6 +474,9 @@ public class Lisp {
                 System.out.println(expresion);
                 flag = true;
             }
+            /**
+             * en caso de qu este null
+             */
             else if(!VerifyFun(code).equals("null")){
                 name = code;
                 String valor = stack.get(1);
@@ -417,6 +494,9 @@ public class Lisp {
                     contadorB = Integer.parseInt(valor);
                 }
             }
+            /**
+             * Caso de que no sea ninguna de las opciones anteriores
+             */
             else{
                 System.out.println("ERROR");
                 flag = true;

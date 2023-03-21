@@ -9,7 +9,10 @@ public class Predicados {
 
         String ask = "";
         /**
-         * variables que se usan para saber que tipo de predicado es
+         * variables que se usan para saber que tipo de predicado
+         * es el que el usuario ingreso
+         * @param request
+         * @return
          */
         boolean atom = false;
         boolean equal = false;
@@ -19,22 +22,26 @@ public class Predicados {
 
         /**
          * se eliminan los espacios en blanco
+         * @param request
          */
         String[] avoidBlank = request.split(" ");
         String AfterBlank = "";
 
         /**
          * se une el array de String
+         * @param request
          */
         AfterBlank = String.join(" ", avoidBlank);
 
         /**
          * se obtiene la primera letra del predicado
+         * @param request
          */
         String firstLetter = AfterBlank.substring(0, 1);
 
         /**
          * se verifica que tipo de predicado es
+         *  @param request
          */
         if (firstLetter.equalsIgnoreCase("a")) {
             atom = true;
@@ -58,6 +65,7 @@ public class Predicados {
         /**
          * se verifica que tipo de predicado es y se hace la operacion correspondiente
          * operacion atom
+         * @param request
          */
         if(atom == true){
             String[] atomSplit = AfterBlank.split(" ");
@@ -70,6 +78,7 @@ public class Predicados {
         /**
          * se verifica que tipo de predicado es y se hace la operacion correspondiente
          * operacion equal
+         * @param request
          */
         if(equal == true){
             String[] equalSplit = AfterBlank.split(" ");
@@ -87,7 +96,8 @@ public class Predicados {
         }
         /**
          * se verifica que tipo de predicado es y se hace la operacion correspondiente
-         * operacion greater than
+         * operacion greater than\
+         * @param request
          */
         if(GreaterThan == true){
             String[] GreaterThanSplit = AfterBlank.split(" ");
@@ -131,6 +141,8 @@ public class Predicados {
         /**
          * se verifica que tipo de predicado es y se hace la operacion correspondiente
          * operacion list
+         * @param request
+         * @return
          */
         if(list==true){
             System.out.print("[");
